@@ -6,7 +6,7 @@ class BookCommentsController < ApplicationController
         if comment.save
         redirect_to book_path(book)
         else
-         render template: "books/show"
+        redirect_back(fallback_location: root_path)
         end
     end
     def destroy
